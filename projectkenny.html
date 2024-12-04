@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Kenny Jay Canares</title>
+    <style>
+        /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+}
+a {
+    text-decoration: none;
+    color: #ccc;
+}
+a:hover {
+    color: #fff;
+}
+
+/* Navigation */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+}
+nav li {
+    margin: 0 20px;
+}
+nav a {
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+/* Content Section */
+.content {
+    text-align: center;
+    margin-top: 100px;
+}
+.content h1 {
+    font-size: 2.5em;
+    color: #fff;
+}
+.content p {
+    font-size: 1.2em;
+    color: #ccc;
+}
+
+        /* Projects Section */
+.content h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px 0;
+    color: #fff;
+}
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+.project-item {
+    width: calc(25% - 20px); /* Flexible width for each item */
+    max-width: 200px; /* Optional: Limit the size */
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+.project-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+
+.project-item img:hover {
+    transform: scale(1.1); /* Zoom effect */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-item {
+        width: calc(50% - 20px); /* Two columns for smaller screens */
+    }
+}
+@media (max-width: 480px) {
+    .project-item {
+        width: calc(100% - 20px); /* Single column for mobile screens */
+    }
+}
+
+/* Background Animation */
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+.square {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(128, 128, 128, 0.5);
+    animation: float 5s linear infinite;
+}
+@keyframes float {
+    0% {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh);
+        opacity: 0.2;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="square"></div>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="indexkenny.html">Home</a></li>
+                <li><a href="aboutkenny.html">About Me</a></li>
+                <li><a href="projectkenny.html">Projects</a></li>
+                <li><a href="servicekenny.html">Services</a></li>
+                <li><a href="contactkenny.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="content">
+            <h1>My Works</h1><br><br>
+            <div class="projects-container">
+                <!-- 15 Image Slots -->
+                <div class="project-item"><img src="project1.jpg" alt="Work 1"></div>
+                <div class="project-item"><img src="project2.jpg" alt="Work 2"></div>
+                <div class="project-item"><img src="project3.jpg" alt="Work 3"></div>
+                <div class="project-item"><img src="project4.jpg" alt="Work 4"></div>
+                <div class="project-item"><img src="project5.jpg" alt="Work 5"></div>
+                <div class="project-item"><img src="project6.jpg" alt="Work 6"></div>
+                <div class="project-item"><img src="project7.jpg" alt="Work 7"></div>
+                <div class="project-item"><img src="project8.jpg" alt="Work 8"></div>
+                <div class="project-item"><img src="project9.jpg" alt="Work 9"></div>
+                <div class="project-item"><img src="project10.jpg" alt="Work 10"></div>
+                <div class="project-item"><img src="project11.jpg" alt="Work 11"></div>
+                <div class="project-item"><img src="project12.jpg" alt="Work 12"></div>
+                <div class="project-item"><img src="project13.jpg" alt="Work 13"></div>
+                <div class="project-item"><img src="project14.jpg" alt="Work 14"></div>
+                <div class="project-item"><img src="project15.jpg" alt="Work 15"></div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const background = document.querySelector('.background');
+
+    function createSquare() {
+        const square = document.createElement('div');
+        square.classList.add('square');
+        square.style.left = `${Math.random() * 100}vw`;
+        square.style.width = `${10 + Math.random() * 20}px`;
+        square.style.height = square.style.width;
+        square.style.animationDuration = `${3 + Math.random() * 3}s`;
+        background.appendChild(square);
+
+        setTimeout(() => {
+            square.remove();
+        }, 6000);
+    }
+
+    setInterval(createSquare, 200);
+});
+
+ // JavaScript for handling multiple lightbox images dynamically
+ document.querySelectorAll('.project-item img').forEach(img => {
+        img.addEventListener('click', () => {
+            const lightbox = document.createElement('div');
+            lightbox.id = 'lightbox';
+            lightbox.style.position = 'fixed';
+            lightbox.style.top = 0;
+            lightbox.style.left = 0;
+            lightbox.style.width = '100%';
+            lightbox.style.height = '100%';
+            lightbox.style.background = 'rgba(0, 0, 0, 0.8)';
+            lightbox.style.display = 'flex';
+            lightbox.style.justifyContent = 'center';
+            lightbox.style.alignItems = 'center';
+            lightbox.style.zIndex = '1000';
+            lightbox.addEventListener('click', () => {
+                lightbox.remove();
+            });
+
+            const imgClone = document.createElement('img');
+            imgClone.src = img.src;
+            imgClone.style.maxWidth = '90%';
+            imgClone.style.maxHeight = '90%';
+            imgClone.style.border = '4px solid white';
+            imgClone.style.borderRadius = '8px';
+
+            lightbox.appendChild(imgClone);
+            document.body.appendChild(lightbox);
+        });
+    });
+
+</script>

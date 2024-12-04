@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Kenny Jay Canares</title>
+    <style>
+         /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+}
+a {
+    text-decoration: none;
+    color: #ccc;
+}
+a:hover {
+    color: #fff;
+}
+
+/* Navigation */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+}
+nav li {
+    margin: 0 20px;
+}
+nav a {
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+/* Content Section */
+.content {
+    text-align: center;
+    margin-top: 100px;
+}
+.content h1 {
+    font-size: 2.5em;
+    color: #fff;
+}
+.content p {
+    font-size: 1.2em;
+    color: #ccc;
+}
+
+        /* Services Section */
+.content h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px 0;
+    color: #fff;
+}
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+.service-item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(40% - 20px); /* Adjust width for layout */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-item h2 {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.service-item p {
+    color: #ccc;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+.service-item:hover {
+    transform: scale(1.05); /* Zoom effect */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-item {
+        width: calc(80% - 20px); /* Single column for smaller screens */
+    }
+}
+@media (max-width: 480px) {
+    .service-item {
+        width: calc(100% - 20px);
+    }
+}
+
+/* Background Animation */
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+.square {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(128, 128, 128, 0.5);
+    animation: float 5s linear infinite;
+}
+@keyframes float {
+    0% {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh);
+        opacity: 0.2;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="square"></div>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="indexkenny.html">Home</a></li>
+                <li><a href="aboutkenny.html">About Me</a></li>
+                <li><a href="projectkenny.html">Projects</a></li>
+                <li><a href="servicekenny.html">Services</a></li>
+                <li><a href="contactkenny.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="content">
+            <h1>My Services</h1><br>
+            <div class="services-container">
+                <div class="service-item">
+                    <h2>Event Photography</h2><br><br>
+                    <p>Capturing the most memorable moments of your events with precision and creativity.</p>
+                </div>
+                <div class="service-item">
+                    <h2>Portrait Photography</h2><br><br>
+                    <p>Personalized portraits that highlight your unique personality and style.</p>
+                </div>
+                <div class="service-item">
+                    <h2>Commercial Photography</h2><br><br>
+                    <p>Professional images that elevate your brand and showcase your products or services.</p>
+                </div>
+                <div class="service-item">
+                    <h2>Photo Editing</h2><br><br>
+                    <p>Enhancing images with expert editing to bring out the best in every shot.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const background = document.querySelector('.background');
+
+    function createSquare() {
+        const square = document.createElement('div');
+        square.classList.add('square');
+        square.style.left = `${Math.random() * 100}vw`;
+        square.style.width = `${10 + Math.random() * 20}px`;
+        square.style.height = square.style.width;
+        square.style.animationDuration = `${3 + Math.random() * 3}s`;
+        background.appendChild(square);
+
+        setTimeout(() => {
+            square.remove();
+        }, 6000);
+    }
+
+    setInterval(createSquare, 200);
+});
+
+</script>

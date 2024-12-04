@@ -28,7 +28,7 @@ a:hover {
 
 /* Navigation */
 header {
-    position: fixed;
+    position: relative;
     width: 100%;
     top: 0;
     background: rgba(0, 0, 0, 0.8);
@@ -71,10 +71,11 @@ nav a {
 }
 .projects-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping of items */
+    gap: 1rem; /* Space between items */
     justify-content: center;
-    padding: 20px;
+    margin: 2rem auto;
+    max-width: 90%;
 }
 .project-item {
     width: calc(25% - 20px); /* Flexible width for each item */
@@ -84,11 +85,10 @@ nav a {
     position: relative;
 }
 .project-item img {
-    width: 100%;
-    height: auto;
-    display: block;
+    width: 250px;
+    height: 250px;
+    object-fit: cover; /* Ensures images/videos fit neatly */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 10px;
 }
 
 
@@ -143,7 +143,7 @@ nav a {
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="indexkenny.html">Home</a></li>
                 <li><a href="aboutkenny.html">About Me</a></li>
                 <li><a href="projectkenny.html">Projects</a></li>
                 <li><a href="servicekenny.html">Services</a></li>
@@ -156,21 +156,21 @@ nav a {
             <h1>My Works</h1><br><br>
             <div class="projects-container">
                 <!-- 15 Image Slots -->
-                <div class="project-item"><img src="minecraft.jpg" alt="Work 1"></div>
-                <div class="project-item"><img src="project2.jpg" alt="Work 2"></div>
-                <div class="project-item"><img src="project3.jpg" alt="Work 3"></div>
-                <div class="project-item"><img src="project4.jpg" alt="Work 4"></div>
-                <div class="project-item"><img src="project5.jpg" alt="Work 5"></div>
-                <div class="project-item"><img src="project6.jpg" alt="Work 6"></div>
-                <div class="project-item"><img src="project7.jpg" alt="Work 7"></div>
-                <div class="project-item"><img src="project8.jpg" alt="Work 8"></div>
-                <div class="project-item"><img src="project9.jpg" alt="Work 9"></div>
-                <div class="project-item"><img src="project10.jpg" alt="Work 10"></div>
-                <div class="project-item"><img src="project11.jpg" alt="Work 11"></div>
-                <div class="project-item"><img src="project12.jpg" alt="Work 12"></div>
-                <div class="project-item"><img src="project13.jpg" alt="Work 13"></div>
-                <div class="project-item"><img src="project14.jpg" alt="Work 14"></div>
-                <div class="project-item"><img src="project15.jpg" alt="Work 15"></div>
+                <div class="project-item"><img src="https://i.pinimg.com/736x/ee/b9/ab/eeb9ab9579718bd7caa6c64bfad3f307.jpg" alt="Work 1"></div>
+                <div class="project-item"><img src="https://i.pinimg.com/736x/ae/76/b7/ae76b79562feb687eeb1a4696f9a8cf6.jpg" alt="Work 2"></div>
+                <div class="project-item"><img src="https://i.pinimg.com/736x/78/e2/75/78e275dfca606ef43257a320dbcf4b91.jpg" alt="Work 3"></div>
+                <div class="project-item"><img src="https://i.pinimg.com/236x/f2/77/9c/f2779c7f84ba79ce2c47834c60f76b43.jpg" alt="Work 4"></div>
+                <div class="project-item"><img src="https://i.pinimg.com/236x/74/ae/48/74ae4879a414dcd895371c9a4ef10c43.jpg" alt="Work 5"></div>
+                <div class="project-item"><img src="https://i.pinimg.com/236x/da/42/82/da42825f267de55905cbaa5c8e9cdfa3.jpg" alt="Work 6"></div>
+                <div class="project-item"><img src="https://i.pinimg.com/474x/58/57/82/5857828d1b6eb53591fac975d155744d.jpg" alt="Work 7"></div>
+                <div class="project-item"><img src="https://i.pinimg.com/236x/a3/9f/e5/a39fe5162876247f326c11a44f908d5f.jpg" alt="Work 8"></div>
+                <div class="project-item"><img src="https://i.pinimg.com/236x/5a/e2/0e/5ae20e255dd955c6b3c8a8696fec844b.jpg" alt="Work 9"></div>
+                <div class="project-item"><img src="https://i.pinimg.com/236x/49/6d/a8/496da817f6dba35570e839a2939c8ccc.jpg" alt="Work 10"></div>
+                <div class="project-item"><img src="https://i.pinimg.com/474x/5f/f3/ab/5ff3ab8cf3dbdc5516f0a23c69c7af75.jpg" alt="Work 11"></div>
+                <div class="project-item"><img src="https://i.pinimg.com/236x/63/3a/c4/633ac48b51a98d7254be9f81c6a483cb.jpg" alt="Work 12"></div>
+                <div class="project-item"><img src="https://i.pinimg.com/236x/3a/ff/8b/3aff8b97ea8f78180531f9b2ee90370b.jpg" alt="Work 13"></div>
+                <div class="project-item"><img src="https://i.pinimg.com/236x/78/ce/cd/78cecd0562d56734b561559e246ed4b2.jpg" alt="Work 14"></div>
+                <div class="project-item"><img src="https://i.pinimg.com/236x/58/1f/97/581f9754c3641a5eb1102fe3b1503692.jpg" alt="Work 15"></div>
             </div>
         </section>
     </main>
